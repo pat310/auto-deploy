@@ -1,0 +1,32 @@
+#must install unzip on ubuntu if not already there
+#sudo apt-get install unzip
+
+#!/bin/bash
+
+# First, get the zip file
+cd ~/temps/ && wget -O projectmaster.zip -q https://github.com/{{repositoryName}}/archive/master.zip
+
+# Second, unzip it, if the zip file exists
+if [ -f ~/temps/projectmaster.zip ]; then
+    # Unzip the zip file
+    unzip -q ~/temps/projectmaster.zip
+
+    # Delete zip file
+    rm ~/temps/projectmaster.zip
+
+    # Rename project directory to desired name
+    mv Project-master {{projectName}}
+
+    #stop current process
+    forever stop ~/{{projectStartFilePath}}
+
+    # Delete current directory
+    rm -rf ~/{{projectName}}
+
+    # Replace with new files
+    mv {{projectName}} ~/
+
+    #install node_modules and then start the application
+    npm install && forever start ~/{{projectStartFilePath}}
+
+fi
