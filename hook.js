@@ -9,14 +9,14 @@ var execOptions = {
 };
 
 gith({
-    repo: 'nickells/rehash-spotify-jukebox'
+  repo: 'nickells/rehash-spotify-jukebox'
 }).on( 'all', function( payload ) {
-    if( payload.branch === 'master' )
-    {
-            // Exec a shell script
-            execFile('./hook.sh', execOptions, function(error, stdout, stderr) {
-                    // Log success in some manner
-                    console.log( 'exec complete' );
-            });
-    }
+  if( payload.branch === 'master' )
+  {
+    // Exec a shell script
+    execFile('./hook.sh', execOptions, function(error, stdout, stderr) {
+      // Log success in some manner
+      console.log( 'exec complete' );
+    });
+  }
 });
