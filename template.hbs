@@ -26,6 +26,9 @@ if [ -f ~/temps/projectmaster.zip ]; then
     # Replace with new files
     mv {{projectName}} ~/
 
+    #change into new directory
+    cd ~/{{projectName}}
+
     #install node_modules and then start the application
     npm install && forever start ~/{{projectStartFilePath}}
 

@@ -8,7 +8,7 @@ var gith = require('gith').create(9001);
 var execFile = require('child_process').execFile;
 
 var execOptions = {
-	maxBuffer: 1024 * 1024 * 15
+	maxBuffer: 1024 * 1024
 };
 
 gith({
