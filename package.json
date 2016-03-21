@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pat310/auto-deploy#readme",
   "dependencies": {
+    "chalk": "^1.1.1",
     "gith": "^1.0.4",
     "handlebars": "^4.0.5"
   }
