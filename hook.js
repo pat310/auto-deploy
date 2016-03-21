@@ -24,7 +24,7 @@ gith({
   		projectStartFilePath: 'rehash-spotify-jukebox/app.js'
   	};
 
-  	fs.writeFileSync(__dirname + '/hook.sh', template(inputData));
+  	fs.writeFileSync(__dirname + '/hook.sh', createTemplate(inputData));
 
     // Exec a shell script
     execFile(__dirname + '/hook.sh', execOptions, function(error, stdout, stderr) {
