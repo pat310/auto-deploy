@@ -22,9 +22,9 @@ gith({
   	var template = fs.readFileSync(__dirname + '/template.hbs');
   	var createTemplate = Handlebars.compile(template.toString());
   	var inputData = {
-  		repositoryName: 'nickells/rehash-spotify-jukebox',
-  		projectName: 'rehash-spotify-jukebox',
-  		projectStartFilePath: 'rehash-spotify-jukebox/app.js'
+  		repositoryName: 'pat310/OlympicWebScraper',
+  		projectName: 'OlympicWebScraper',
+  		projectStartFilePath: 'OlympicWebScraper/server.js'
   	};
 
   	fs.writeFileSync(__dirname + '/hook.sh', createTemplate(inputData));
