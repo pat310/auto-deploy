@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var Handlebars = require('handlebars');
 var chalk = require('chalk');
+var util = require('util');
 
 // Listen on port 9001
 // var gith = require('gith').create(9001);
@@ -15,8 +16,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/', function(req, res){
-  console.log(chalk.yellow('got an incoming request', req));
-})
+  console.log(chalk.yellow('got an incoming request', util.inspect(req, {showHidden: false, depth: null})));
+});
 
 app.set('port', 9001);
 app.listen(app.get('port'), function(err){
