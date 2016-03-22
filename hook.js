@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/', function(req, res){
-  console.log(chalk.yellow('got an incoming request', util.inspect(req, {showHidden: false, depth: null})));
+  console.log(chalk.yellow('got an incoming request', util.inspect(req.body, {showHidden: false, depth: null})));
+  res.sendStatus(200);
 });
 
 app.set('port', 9001);
