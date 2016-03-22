@@ -22,7 +22,6 @@
     "body-parser": "^1.15.0",
     "chalk": "^1.1.1",
     "express": "^4.13.4",
-    "gith": "^1.0.4",
     "handlebars": "^4.0.5"
   }
 }
