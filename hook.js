@@ -18,7 +18,7 @@ gith({
 }).on( 'all', function( payload ) {
   if( payload.branch === 'master' )
   {
-    console.log(chalk.yellow('incoming payload on master'));
+    console.log(chalk.yellow('incoming payload on master', payload));
   	var template = fs.readFileSync(__dirname + '/template.hbs');
   	var createTemplate = Handlebars.compile(template.toString());
   	var inputData = {
@@ -29,11 +29,11 @@ gith({
 
   	fs.writeFileSync(__dirname + '/hook.sh', createTemplate(inputData));
 
-    // Exec a shell script
-    execFile(__dirname + '/hook.sh', execOptions, function(error, stdout, stderr) {
-      // Log success in some manner
-      if(error) console.log(chalk.red('Error executing script'));
-      else console.log(chalk.green('exec complete'));
-    });
+    // // Exec a shell script
+    // execFile(__dirname + '/hook.sh', execOptions, function(error, stdout, stderr) {
+    //   // Log success in some manner
+    //   if(error) console.log(chalk.red('Error executing script'));
+    //   else console.log(chalk.green('exec complete'));
+    // });
   }
 });
