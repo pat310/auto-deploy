@@ -18,7 +18,7 @@ if [ -f ~/temps/projectmaster.zip ]; then
     mv Project-master rehash-spotify-jukebox
 
     #stop current process
-    forever stop ~/rehash-spotify-jukebox/app.js
+    forever stop -s ~/rehash-spotify-jukebox/app.js
 
     # Delete current directory
     rm -rf ~/rehash-spotify-jukebox
