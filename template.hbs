@@ -15,7 +15,7 @@ if [ -f ~/temps/projectmaster.zip ]; then
     rm ~/temps/projectmaster.zip
 
     # Rename project directory to desired name
-    mv Project-master {{projectName}}
+    mv {{projectName}}-master {{projectName}}
 
     #stop current process
     forever stop ~/{{projectStartFilePath}}
