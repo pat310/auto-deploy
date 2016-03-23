@@ -18,7 +18,7 @@ if [ -f ~/temps/projectmaster.zip ]; then
     mv {{projectName}}-master {{projectName}}
 
     #stop current process
-    forever stop ~/{{projectStartFilePath}}
+    forever stop -s ~/{{projectStartFilePath}}
 
     # Delete current directory
     rm -rf ~/{{projectName}}
@@ -30,6 +30,6 @@ if [ -f ~/temps/projectmaster.zip ]; then
     cd ~/{{projectName}}
 
     #install node_modules and then start the application
-    npm install && forever start ~/{{projectStartFilePath}}
+    npm install && forever start -s ~/{{projectStartFilePath}}
 
 fi

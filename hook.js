@@ -17,7 +17,7 @@ var execOptions = {
 };
 
 app.post('/', function(req, res){
-  // if(req.body.ref && checkMaster(req.body.ref)){
+  if(req.body.ref && checkMaster(req.body.ref)){
     console.log(chalk.yellow('incoming webhook on master'));
     var template = fs.readFileSync(__dirname + '/template.hbs');
     var createTemplate = Handlebars.compile(template.toString());
@@ -36,7 +36,7 @@ app.post('/', function(req, res){
       if(error) console.log(chalk.red('Error executing script', error));
       else console.log(chalk.green('exec complete'));
     });
-  // }
+  }
 
   res.sendStatus(200);
 });

@@ -30,6 +30,6 @@ if [ -f ~/temps/projectmaster.zip ]; then
     cd ~/rehash-spotify-jukebox
 
     #install node_modules and then start the application
-    npm install && forever start app.js
+    npm install && forever start -s app.js
 
 fi
