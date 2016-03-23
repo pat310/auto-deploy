@@ -31,7 +31,7 @@ app.post('/', function(req, res){
 
     // Exec a shell script
     execFile(__dirname + '/hook.sh', execOptions, function(error, stdout, stderr) {
-      if(error) console.log(chalk.red('Error executing script'));
+      if(error) console.log(chalk.red('Error executing script', error));
       else console.log(chalk.green('exec complete'));
     });
   }
